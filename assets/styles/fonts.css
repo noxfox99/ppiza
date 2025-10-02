@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Lato";
+  src: local("../fonts/Lato Regular"), local("../fonts/Lato-Regular"), url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff"), url("../fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bebas Neue";
+  src: local("../fonts/Bebas Neue Cyrillic Regular"), local("../fonts/Bebas-Neue-Cyrillic-Regular"), url("../fonts/BebasNeueCyrillic.woff2") format("woff2"), url("../fonts/BebasNeueCyrillic.woff") format("woff"), url("../fonts/BebasNeueCyrillic.ttf") format("truetype");
+}
+
+/*# sourceMappingURL=fonts.css.map */

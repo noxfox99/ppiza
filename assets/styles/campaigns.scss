@@ -1,0 +1,179 @@
+.campaigns {
+  padding-bottom: 40px;
+  overflow: hidden;
+
+  &-heading {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 40px;
+
+    h2 {
+      @include flex-column;
+    }
+  }
+
+  .campaigns-title {
+    @include screen-lp {
+      display: flex;
+      max-width: 576px;
+      gap: 40px;
+      margin-left: auto;
+
+      h2 {
+        margin-bottom: 0;
+
+        .gradient {
+          @include flex-column;
+
+          span {
+            background-clip: unset;
+            -webkit-text-fill-color: $colorWhite;
+            text-fill-color: $colorWhite;
+          }
+        }
+      }
+
+      p {
+        max-width: 264px;
+      }
+    }
+
+    @include screen-md {
+      width: 100%;
+      max-width: 887px;
+      gap: 110px;
+
+      h2 {
+        .gradient {
+          flex-direction: row;
+
+          span {
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+        }
+      }
+
+      p {
+        max-width: 288px;
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    gap: 20px;
+    padding: 0 14px;
+    white-space: nowrap;
+    overflow: auto;
+
+    @include screen-lp {
+      gap: 40px;
+      padding: 0 32px;
+    }
+
+    @include screen-md {
+      gap: 40px;
+      padding: 0 40px;
+    }
+
+    @include screen-md {
+      gap: 60px;
+      padding: 0 40px;
+    }
+
+    &-item {
+      @include flex-column;
+      min-width: 96%;
+      height: 312px;
+      padding: 16px;
+
+      @include screen-lp {
+        width: 100%;
+        max-width: 584px;
+        min-width: 584px;
+        height: 300px;
+        padding: 20px;
+      }
+
+      @include screen-md {
+        max-width: 887px;
+        min-width: 887px;
+        height: 364px;
+        padding: 40px;
+      }
+
+      h2 {
+        @include flex-column;
+
+        @include screen-md {
+          font-size: 60px;
+        }
+
+        .gradient {
+          @include flex-column;
+
+          @include screen-lp {
+            flex-direction: row;
+            gap: 4px;
+          }
+
+          span {
+            background-clip: unset;
+            -webkit-text-fill-color: $colorWhite;
+            text-fill-color: $colorWhite;
+
+            @include screen-lp {
+              background-clip: text;
+              -webkit-text-fill-color: transparent;
+              text-fill-color: transparent;
+            }
+          }
+        }
+
+        & > span:not(.gradient):last-child {
+          margin-left: 90px;
+
+          @include screen-md {
+            margin-left: 178px;
+          }
+        }
+      }
+
+      .qr-code {
+        display: flex;
+        align-items: flex-end;
+        margin: auto 4px 4px;
+        white-space: normal;
+
+        @include screen-lp {
+          margin: auto 0 0;
+
+          img {
+            min-width: 95px;
+            margin-right: 20px;
+          }
+
+          span {
+            max-width: 187px;
+            font-size: 12px;
+            color: $colorLightGray;
+          }
+        }
+
+        @include screen-md {
+          img {
+            min-width: 118px;
+            margin-right: 63px;
+          }
+
+          span {
+            max-width: 277px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

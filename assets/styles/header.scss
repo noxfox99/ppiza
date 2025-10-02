@@ -1,0 +1,81 @@
+header {
+  @include flex-center-y;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 14px;
+  background: $colorBlack;
+  border-bottom: 1px solid #F9F9F9;
+  z-index: 3;
+
+  @include screen-tb {
+    padding: 14px 32px;
+  }
+
+  @include screen-md {
+    left: 0;
+    right: 0;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .nav {
+    display: none;
+
+    @include screen-tb {
+      display: flex;
+
+      ul {
+        @include flex-center-y;
+        gap: 40px;
+
+        li {
+          a {
+            color: $colorWhite;
+          }
+        }
+      }
+    }
+  }
+
+  .logo {
+    display: flex;
+    margin-right: auto;
+    font-family: $fontBebas;
+    font-size: 30px;
+    line-height: 97%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: $colorWhite;
+
+    @include screen-tb {
+      font-size: 40px;
+    }
+
+    @include screen-md {
+      margin-right: 60px;
+    }
+  }
+
+  .menu-btn {
+    display: flex;
+
+    @include screen-tb {
+      display: none;
+    }
+  }
+
+  .location {
+    display: none;
+
+    @include screen-md {
+      display: block;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 300px;
+      margin-left: auto;
+    }
+  }
+}

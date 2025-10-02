@@ -1,0 +1,97 @@
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.slider-nav {
+  display: none;
+
+  @include screen-lp {
+    display: flex;
+    gap: 20px;
+
+    button {
+      @include flex-center-center;
+      width: 40px;
+      height: 40px;
+      background: $colorOrange;
+      border-radius: 8px;
+    }
+  }
+
+  @include screen-md {
+    button {
+      @include flex-center-center;
+      width: 68px;
+      height: 68px;
+
+      svg {
+        width: 42px;
+        height: 42px;
+      }
+    }
+  }
+}
+
+.btn-primary {
+  @include flex-center-center;
+  padding: 8px;
+  background: $colorOrange;
+  border-radius: 8px;
+  font-family: $fontBebas;
+  font-size: 24px;
+  line-height: 97%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: $colorWhite;
+
+  span {
+    margin-left: auto;
+
+    &.icon {
+      @include flex-center-center;
+      width: 55px;
+      height: 55px;
+      background: $colorWhite;
+      border-radius: 3px;
+
+      svg {
+        path {
+          transition: .3s ease;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    background: $colorWhite;
+    color: $colorOrange;
+
+    span {
+      &.icon {
+        background: $colorOrange;
+
+        svg {
+          path {
+            fill: $colorWhite;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn-secondary {
+  @include flex-center-center;
+  padding: 8px;
+  border-radius: 8px;
+  font-family: $fontBebas;
+  font-size: 24px;
+  line-height: 97%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: $colorWhite;
+  border: 1px solid $colorWhite;
+}

@@ -1,0 +1,109 @@
+.menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 43, 43, .67);
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s ease;
+  overflow: hidden;
+
+  @include screen-tb {
+    display: none;
+  }
+
+  &-wrapper {
+    @include flex-column;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100%;
+    padding: 8px 10px 20px 14px;
+    background: $colorBlack;
+    transition: .3s ease;
+
+    .nav {
+      @include flex-column;
+      gap: 20px;
+      margin-top: 130px;
+
+      li {
+        a {
+          font-size: 16px;
+          color: $colorWhite;
+        }
+      }
+    }
+
+    .contacts {
+      @include flex-column;
+      gap: 12px;
+      margin-top: auto;
+
+      @include screen-lp {
+        gap: 20px;
+      }
+
+      li {
+        @include screen-lp {
+          font-size: 16px;
+        }
+
+        @include screen-md {
+          font-size: 18px;
+        }
+
+        a {
+          color: $colorWhite;
+          transition: .3s ease;
+
+          @include screen-lp {
+            font-size: 16px;
+          }
+
+          @include screen-md {
+            font-size: 18px;
+          }
+
+          &:hover {
+            color: $colorOrange;
+          }
+        }
+
+        &.hidden-xs {
+          display: none;
+
+          @include screen-lp {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .social {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+
+    .menu-wrapper {
+      right: 0;
+    }
+  }
+}

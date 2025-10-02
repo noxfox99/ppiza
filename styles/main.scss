@@ -1,0 +1,129 @@
+@import "mixins";
+@import "fonts";
+@import "variables";
+@import "normalize";
+
+body {
+  background: $colorBlack;
+  font-family: $fontLato;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  color: $colorWhite;
+
+  @include screen-tb {
+    font-size: 18px;
+    line-height: 115%;
+  }
+
+  @include screen-md {
+    font-size: 22px;
+  }
+}
+
+h1 {
+  font-family: $fontBebas;
+  font-weight: 400;
+  font-size: 124px;
+  line-height: 72%;
+  letter-spacing: -0.02em;
+  color: $colorBlack;
+  text-transform: uppercase;
+
+  @include screen-tb {
+    font-size: 168px;
+    color: $colorWhite;
+  }
+
+  @include screen-md {
+    font-size: 373px;
+  }
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-family: $fontBebas;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 97%;
+  letter-spacing: -0.02em;
+  color: $colorWhite;
+  text-transform: uppercase;
+
+  @include screen-tb {
+    font-size: 48px;
+  }
+
+  @include screen-md {
+    font-size: 75px;
+  }
+
+  .gradient {
+    background: $colorGradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
+
+main {
+  @include flex-column;
+  gap: 80px;
+
+  @include screen-tb {
+    gap: 80px;
+  }
+
+  @include screen-md {
+    max-width: 1440px;
+    gap: 120px;
+    margin: 0 auto;
+  }
+
+  section {
+    width: 100%;
+  }
+}
+
+.container {
+  padding: 0 14px;
+
+  @include screen-tb {
+    padding: 0 32px;
+  }
+
+  @include screen-md {
+    padding: 0 40px;
+  }
+}
+
+@include screen-lp {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $colorOrange;
+    border-radius: 4px;
+  }
+}
+
+@import "buttons";
+@import "header";
+@import "hero";
+@import "location";
+@import "products";
+@import "filter";
+@import "marquee";
+@import "campaigns";
+@import "reviews";
+@import "footer";
+@import "modal";
+@import "menu";
+@import "checkout";

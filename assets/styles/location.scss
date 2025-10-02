@@ -1,0 +1,82 @@
+.location {
+  position: absolute;
+  top: 68px;
+  left: 14px;
+  width: 292px;
+
+  @include screen-tb {
+    top: 88px;
+    left: 32px;
+    width: 275px;
+  }
+
+  @include screen-md {
+    top: 88px;
+    left: 32px;
+    width: 275px;
+  }
+
+  span {
+    @include flex-center-y;
+    height: 48px;
+    gap: 20px;
+    padding: 12px 14px;
+    background: $colorWhite;
+    border-radius: 8px;
+    color: $colorOrange;
+    cursor: pointer;
+  }
+
+  .chevron {
+    margin-left: auto;
+    transition: .3s ease;
+  }
+
+  .dropdown {
+    display: flex;
+    position: absolute;
+    top: 95%;
+    left: 0;
+    width: calc(100vw - 28px);
+    max-height: 256px;
+    padding: 14px 4px 14px 14px;
+    background: $colorWhite;
+    border-radius: 8px;
+    transition: .3s ease;
+    opacity: 0;
+    pointer-events: none;
+
+    @include screen-tb {
+      width: 100%;
+    }
+
+    ul {
+      @include flex-column;
+      width: 100%;
+      max-height: 100%;
+      gap: 24px;
+      overflow: auto;
+
+      li {
+        color: $colorBlack;
+        cursor: pointer;
+
+        &.active {
+          color: $colorOrange;
+        }
+      }
+    }
+  }
+
+  &.active {
+    .chevron {
+      rotate: 180deg
+    }
+
+    .dropdown {
+      top: calc(100% + 8px);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
